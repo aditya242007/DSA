@@ -16,13 +16,13 @@ void Insert(vector<int>& arr,int last){
     arr.push_back(val);           // push back the last element
 }
 
-void Sort(vector<int>& arr){
+void RecursionSort(vector<int>& arr){
     if(arr.size() == 1) return ;
 
     int last = arr.back();
     arr.pop_back();
 
-    Sort(arr);                    // recursive call
+    RecursionSort(arr);                    // recursive call
 
     Insert(arr,last);             // insert last element in sorted array
 
@@ -31,7 +31,7 @@ void Sort(vector<int>& arr){
 int main(){
     vector<int> arr = {5,1,1,2,0,0};
 
-    Sort(arr);                    // main function
+    RecursionSort(arr);                    // main function
 
     for(int i=0;i<arr.size();i++){
         cout<<arr[i]<<" ";
